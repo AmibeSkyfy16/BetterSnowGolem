@@ -32,7 +32,7 @@ class BetterSnowGolemMod : ModInitializer {
 
         Configs.AVAILABLE_BLOCKS.updateIterable(AvailableBlocks::allowedBlocks) {
             it.clear()
-            it.addAll(Registries.BLOCK.ids.map { b -> b.toTranslationKey() })
+            it.addAll(Registries.BLOCK.ids.map { id -> Registries.BLOCK.get(id).translationKey })
         }
 
         SnowGolemEntityOnTickMovementCallback.EVENT.register { snowGolemEntity, damageSource, v ->
