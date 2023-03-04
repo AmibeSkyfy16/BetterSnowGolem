@@ -4,6 +4,7 @@ import ch.skyfy.bettersnowgolem.callback.SnowGolemEntityOnTickMovementCallback
 import ch.skyfy.bettersnowgolem.config.Configs
 import ch.skyfy.json5configlib.ConfigManager
 import net.fabricmc.api.DedicatedServerModInitializer
+import net.fabricmc.api.ModInitializer
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.block.BlockState
 import net.minecraft.util.TypedActionResult
@@ -13,7 +14,7 @@ import java.nio.file.Path
 import kotlin.io.path.*
 
 @Suppress("MemberVisibilityCanBePrivate")
-class BetterSnowGolemMod : DedicatedServerModInitializer {
+class BetterSnowGolemMod : ModInitializer {
 
     companion object {
         const val MOD_ID: String = "bettersnowgolem"
@@ -30,7 +31,7 @@ class BetterSnowGolemMod : DedicatedServerModInitializer {
         ConfigManager.loadConfigs(arrayOf(Configs::class.java))
     }
 
-    override fun onInitializeServer() {
+    override fun onInitialize() {
 
         SnowGolemEntityOnTickMovementCallback.EVENT.register { snowGolemEntity, damageSource, v ->
             val blockAbove: BlockState = snowGolemEntity.world.getBlockState(snowGolemEntity.blockPos.down())
