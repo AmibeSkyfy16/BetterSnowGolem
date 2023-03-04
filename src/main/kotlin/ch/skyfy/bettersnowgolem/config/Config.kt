@@ -8,17 +8,9 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Config(
     @SerialComment("A list of block where snow golem wont die if above in a hot biome")
-    val allowedBlocks: MutableSet<String>
+    val allowedBlocks: MutableSet<String> = mutableSetOf(
+        "block.minecraft.snow_block",
+        "block.minecraft.blue_ice",
+        "block.minecraft.packed_ice"
+    )
 ) : Validatable
-
-class DefaultConfig : Defaultable<Config> {
-    override fun getDefault(): Config {
-        return Config(
-            mutableSetOf(
-                "block.minecraft.snow_block",
-                "block.minecraft.blue_ice",
-                "block.minecraft.packed_ice"
-            )
-        )
-    }
-}

@@ -3,14 +3,14 @@
   "id": "bettersnowgolem",
   "version": "${version}",
   "name": "bettersnowgolem",
-  "description": "Allow snow golem to survive if placed above a snow block in a hot biome",
+  "description": "Allows snow golem to survive if placed above a snow block in a hot biomes",
   "authors": [
     "Skyfy16"
   ],
   "contact": {},
   "license": "MIT",
   "icon": "assets/bettersnowgolem/icon.png",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
     "server": [
       {
