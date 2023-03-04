@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "bettersnowgolem",
+  "version": "${version}",
+  "name": "bettersnowgolem",
+  "description": "Allow snow golem to survive if placed above a snow block in a hot biome",
+  "authors": [
+    "Skyfy16"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/bettersnowgolem/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "server": [
+      {
+        "adapter": "kotlin",
+        "value": "ch.skyfy.bettersnowgolem.BetterSnowGolemMod"
+      }
+    ],
+    "main": []
+  },
+  "mixins": [
+    "bettersnowgolem.mixin.json"
+  ],
+  "depends": {
+    "java": ">=17",
+    "minecraft": "1.19.3",
+    "fabric": "*",
+    "fabricloader": ">=0.14.17",
+    "fabric-language-kotlin": ">=1.9.1+kotlin.1.8.10"
+  }
+}
