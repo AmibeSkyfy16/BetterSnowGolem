@@ -12,13 +12,12 @@
   "icon": "assets/bettersnowgolem/icon.png",
   "environment": "*",
   "entrypoints": {
-    "server": [
+    "main": [
       {
         "adapter": "kotlin",
         "value": "ch.skyfy.bettersnowgolem.BetterSnowGolemMod"
       }
-    ],
-    "main": []
+    ]
   },
   "mixins": [
     "bettersnowgolem.mixin.json"
