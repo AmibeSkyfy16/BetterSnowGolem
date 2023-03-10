@@ -115,7 +115,7 @@ tasks {
 
     named<Jar>("jar") {
         from("LICENSE") {
-            rename { "${it}_${base.archivesName}" }
+            rename { "${it}_${base.archivesName.get()}" }
         }
     }
 
